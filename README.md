@@ -1,5 +1,5 @@
 # Blog
-A reponsive blog web application where users can create &amp; host their articles
+A reponsive web application blog where users can create &amp; host their articles
 
 # Tech Stack
 <ul>
