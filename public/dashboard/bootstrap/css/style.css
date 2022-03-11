@@ -1,0 +1,49 @@
+.t-black {
+    color: #555555;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: none;
+}
+
+.b-primary {
+    background-color: #6A77ED;
+    color: white;
+ }
+ 
+.b2-primary {
+    background-color: #7E56DA;
+}
+ 
+.b-success {
+    background-color: #6AED87;
+    color: white;
+}
+ 
+.b-danger {
+    background-color: #ED6A6A;
+    color: white;
+}
+
+.b-warning {
+    background-color: #EDC06A;
+    color: white;
+}
+ 
+.b-pink {
+    background-color: #ED6AC0;
+    color: white;
+}
+ 
+.t-black {
+    color: #555555;
+}
+ 
+.t-primary {
+    color: #7951D4;
+}
+ 
+.t-secondary {
+    color: #797979;
+}

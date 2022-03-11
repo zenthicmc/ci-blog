@@ -1,0 +1,833 @@
+* {
+   padding: 0;
+   margin: 0;
+   font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+   scroll-behavior: smooth;
+   overflow-x: hidden;
+}
+
+.card1 {
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   border: none;
+   transition: transform .2s;
+}
+
+.card1:hover {
+   transform: scale(1.1);
+}
+
+.card2 {
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   border: none;
+   transition: transform .2s;
+}
+
+.card2:hover {
+   transform: scale(1.1);
+}
+
+.active {
+   font-weight: bold;
+}
+
+.header-img {
+   width: 100%;
+   height: 100vh;
+   background-image: url('../img/header.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.navbar {
+   width: 100%;
+}
+
+.b-primary {
+   background-color: #6A77ED;
+   color: white;
+}
+
+.b2-primary {
+   background-color: #7E56DA;
+}
+
+.b-success {
+   background-color: #6AED87;
+   color: white;
+}
+
+.b-danger {
+   background-color: #ED6A6A;
+   color: white;
+}
+
+.b-warning {
+   background-color: #EDC06A;
+   color: white;
+}
+
+.b-pink {
+   background-color: #ED6AC0;
+   color: white;
+}
+
+.t-black {
+   color: #555555;
+}
+
+.t-primary {
+   color: #7951D4;
+}
+
+
+.t-secondary {
+   color: #797979;
+}
+
+
+.button {
+   background-color: #744ecc;
+   color: white;
+}
+
+.text-end > a {
+   width: 90px;
+   vertical-align: middle;
+   margin: 5px; 
+}
+
+.navbar-nav > li > a {
+   font-size: 18px;
+}
+
+.nav > li > a {
+   font-size: 18px;
+}
+
+.nav > li {
+   margin: 10px;
+}
+
+.text-default {
+   color: #5c5c5c;
+}
+
+.brand {
+   width: 15%;
+}
+
+.brand h4 {
+   vertical-align: middle;
+   margin-top: 0;
+   font-weight: bold;
+}
+
+.nav {
+   vertical-align: middle;
+}
+
+.img-invesment {
+   width: 320px;
+   height: 320px;
+   background-repeat: no-repeat;
+   background-size: cover;
+   margin-left: 50px;
+}
+
+.header-text {
+   font-size: 45px;
+}
+
+.header-text-secondary {
+   font-size: 30px;
+}
+
+.header-content > .col-12 > .col-4 > .button {
+   width: 110px;
+   vertical-align: middle;
+}
+
+.header-search {
+   width: 50%;
+   height: 100px;
+   background-color: white;
+   margin: auto;
+   border-radius: 20px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   margin: auto;
+   margin-top: 2%;
+}
+
+.search-form {
+   width: 80%;
+   height: 50%;
+   vertical-align: middle;
+   margin: auto;
+   padding-top: 25px;
+}
+
+.form-input {
+   height: 50px;
+}
+
+.title {
+   margin-top: 100px;
+   margin-bottom: 50px;
+}
+
+.cards {
+   padding: 20px;
+   width: 90%;
+   margin: auto;
+   justify-content: space-between;
+   display: flex;
+}
+
+.card2-body {
+   margin-top: 20px;
+}
+
+.card-body h3 {
+   font-size: 20px;
+   font-weight: bold;
+}
+
+.card-text {
+   font-size: 15px;
+   margin-top: 10px;
+}
+
+.category-card {
+   height: 18px;
+   font-size: 12px;
+   width: 100px;
+   border-radius: 5px;
+}
+
+.card-time {
+   height: 18px;
+   font-size: 14px;
+   width: 100px;
+   border-radius: 5px;
+   margin-left: 10px;
+}
+
+.card-dot {
+   height: 18px;
+   font-size: 12px;
+   border-radius: 5px;
+   margin-left: 10px;
+}
+
+.card1 {
+   width: 34rem;
+   cursor: pointer;
+}
+
+.card2 {
+   cursor: pointer;
+}
+
+.card1 > .row > .col-md-4 > img {
+   width: 250px;
+   height: 100%;
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+.card1 > .row > .col-md-7 {
+   margin-left: 40px;
+   background-color: white;
+}
+
+.card2 {
+   width: 22rem;
+}
+
+.title-about {
+   margin-top: 30%;
+}
+
+.img-question {
+   width: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   float: right;
+}
+
+.img-contact {
+   width: 80%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   float: right;
+}
+
+.title-contact {
+   margin-top: 10%;
+}
+
+.contact > .col-4 > form {
+   margin-top: 10%;
+}
+
+.contact > .col-4 > form > button {
+   width: 100%;
+}
+
+.contact .form-control {
+   background-color: #F5F4FA;
+   border: none;
+   color: black;
+}
+
+.footer {
+   width: 100%;
+   height: auto;
+   background-image: url(../img/footer.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   margin-top: 10%;
+   padding-top: 8%;
+}
+
+.footer-content {
+   width: 100%;
+   height: auto;
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 20px;
+}
+
+.footer-content p {
+   margin: 0;
+   padding: 4px;
+}
+
+
+.footer-content a {
+   text-decoration: none;
+}
+
+.footer-content ul li {
+   list-style: none;
+}
+
+.footer-content ul li i{
+   margin-top: 20%;
+   font-size: 35px;
+   padding: 5px;
+}
+
+.footer-links {
+   width: 30%;
+   height: auto;
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 20px;
+}
+
+.footer-links > .col-1 {
+   width: 20%;
+}
+
+.search-title {
+   margin-top: 6%;
+}
+
+.search-line {
+   width: 30%;
+   margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 480px) {
+
+   html, body {
+      overflow-x: hidden;
+    }
+
+   body {
+      position: relative
+   }
+
+   .investment {
+      visibility: hidden;
+   }
+
+   .header-img {
+      height: 80vh;
+   }
+
+   .navbar {
+      position: absolute;
+      z-index: 100;
+      background-color: #7E56DA;
+   }
+
+   .header-content {
+      margin-top: 15%;
+      position: absolute;
+      margin-left: 2%;
+      width: 100%;
+   }
+
+   .header-content > .col-12 > .col-4 {
+      width: 100%;
+      margin-left: 20%;
+   }
+
+   .header-text {
+      font-size: 35px;
+   }
+   
+   .header-text-secondary {
+      font-size: 22px;
+   }
+
+   .header-search {
+      margin-top: 0px;
+      width: 90%;
+      height: 100px;
+      position: absolute;
+      top: 55vh;
+      left: 0;
+      right: 0;
+   }
+
+   form > .col-11 {
+      width: 80%;
+      margin: auto;
+   }
+
+   form > .col-11 > input {
+      width: 100%
+   }
+
+   form > .col-11 > button {
+      width: 100%;
+      position: absolute;
+      z-index: 20;
+   }
+
+   .title {
+      margin-top: 0px;
+      margin-bottom: 0px;
+   }
+
+   .cards {
+      padding: 10px;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+   }
+
+   .card1 {
+      width: 100%;
+      margin-top: 30px;
+   }
+
+   .card2 {
+      width: 100%;
+      margin-top: 30px;
+   }
+
+   .card1 > .row > .col-md-4 > img {
+      width: 100%;
+      height: 200px;
+   }
+
+   .card1 > .row > .col-md-7 {
+      margin-left: 0px;
+   }
+
+   .about-us > .col-5 > img {
+      visibility: hidden;
+   }
+
+   .about-us > .col-5 {
+      visibility: hidden;
+      position: absolute;
+   }
+
+   .title-about {
+      margin-top: 20%;
+   }
+
+   .about-us > .col-6 {
+      width: 90%;
+      margin-bottom: 10%;
+   }
+
+   .contact > .col-5 {
+      visibility: hidden;
+      position: absolute;
+   }
+
+   .contact > .col-4 {
+      width: 90%;
+   }
+
+   .footer-content {
+      flex-direction: column;
+   }
+
+   .footer-content > .col-3 {
+      width: 80%;
+      margin: auto;
+      margin-top: 30%;
+   }
+
+   .footer-links {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin-left: 10%;
+      margin-top: 6%;
+   }
+
+   .footer-links > .col-1 {
+      width: 50%;
+   }
+
+   .footer-content > .col-2 {
+      width: 100%;
+      margin-top: 3%;
+   }
+
+   .footer-content > .col-2 > ul > li {
+      display: flex;
+      margin-left: 0px;
+   }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px) {
+   html, body {
+      overflow-x: hidden;
+    }
+
+   body {
+      position: relative
+   }
+
+   .investment {
+      visibility: hidden;
+   }
+
+   .title {
+      margin-top: 50px;
+      margin-bottom: 0px;
+   }
+
+   .header-img {
+      height: 80vh;
+   }
+
+   .navbar {
+      position: absolute;
+      z-index: 100;
+      background-color: #7E56DA;
+   }
+
+   .header-content {
+      margin-top: 15%;
+      position: absolute;
+      margin-left: 10%;
+      width: 100%;
+   }
+
+   .header-content > .col-12 > .col-4 {
+      width: 100%;
+      margin-left: 20%;
+   }
+
+   .header-text {
+      font-size: 35px;
+   }
+   
+   .header-text-secondary {
+      font-size: 22px;
+   }
+
+   .header-search {
+      margin-top: 0px;
+      width: 70%;
+      height: 100px;
+      position: absolute;
+      top: 55vh;
+      left: 0;
+      right: 0;
+   }
+
+   form > .col-11 {
+      width: 90%;
+      margin: auto;
+   }
+
+   form > .col-11 > input {
+      width: 100%
+   }
+
+   form > .col-11 > button {
+      width: 100%;
+      position: absolute;
+      z-index: 20;
+   }
+
+   .cards {
+      flex-direction: column;
+   }
+
+   .card1 {
+      width: 100%;
+      margin-top: 30px;
+   }
+
+   .card2 {
+      width: 100%;
+      margin-top: 30px;
+   }
+
+   .card1 > .row > .col-md-4 > img {
+      width: 100%;
+      height: 250px;
+   }
+
+   .card1 > .row > .col-md-7 {
+      margin-left: 0px;
+   }
+
+   .about-us > .col-5 > img {
+      visibility: hidden;
+   }
+
+   .about-us > .col-5 {
+      visibility: hidden;
+      position: absolute;
+   }
+
+   .title-about {
+      margin-top: 20%;
+   }
+
+   .about-us > .col-6 {
+      width: 80%;
+      margin-bottom: 10%;
+   }
+
+   .contact > .col-5 {
+      visibility: hidden;
+      position: absolute;
+   }
+
+   .contact > .col-4 {
+      width: 80%;
+   }
+
+   .footer-content {
+      flex-direction: column;
+   }
+
+   .footer-content > .col-3 {
+      width: 80%;
+      margin: auto;
+      margin-top: 20%;
+   }
+
+   .footer-links {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin-left: 10%;
+      margin-top: 10%;
+   }
+
+   .footer-links > .col-1 {
+      width: 50%;
+   }
+
+   .footer-content > .col-2 {
+      width: 100%;
+      margin-top: 10%;
+   }
+
+   .footer-content > .col-2 > ul > li {
+      display: flex;
+      margin-left: 20px;
+   }
+}
+
+
+@media only screen and (max-width: 1024px) and (min-width: 1024px) {
+   .header-search {
+      margin-top: 0px;
+      width: 60%;
+      height: 100px;
+      position: absolute;
+      top: 70vh;
+      left: 0;
+      right: 0;
+   }
+
+   .header-content {
+      width: 100%;
+   }
+
+   .header-content > .col-12 > .col-3 {
+      width: 40%;
+   }
+
+   .collapse > .col-3 {
+      width: 30%;
+   }
+
+   .collapse > .col-3 > .text-end {
+      margin-right: 25px; 
+   }
+
+   .cards-list1 {
+      padding: 10px;
+      width: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+
+   .cards-list2 {
+      width: 100%;
+      padding: 0;
+   }
+
+   .card1 {
+      width: 100%;
+      margin-top: 30px;
+   }
+
+   .card2 {
+      width: 100%;
+      margin-top: 30px;
+      margin-left: 20px;
+   }
+
+   .card1 > .row > .col-md-4 > img {
+      width: 100%;
+      height: 100%;
+   }
+
+   .card1 > .row > .col-md-7 {
+      margin-left: 0px;
+   }
+
+   .title {
+      margin-top: 50px;
+      margin-bottom: 0px;
+   }
+
+   .footer-links {
+      width: 30%;
+   }
+
+   .footer-links > .col-1{
+      width: 30%;
+   }
+
+   .footer-content > .col-2 {
+      width: 20%;
+      margin-top: 5%;
+   }
+
+   .footer-content > .col-2 > ul > li {
+      display: flex;
+      margin-left: 0px;
+   }
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 1280px) {
+
+   .header-search {
+      margin-top: 0px;
+      width: 60%;
+      height: 100px;
+      position: absolute;
+      top: 70vh;
+      left: 0;
+      right: 0;
+   }
+
+   .header-content > .col-12 > .col-3 {
+      width: 30%;
+   }
+
+   .cards {
+      justify-content: space-between;
+   }
+
+   .cards-list1 {
+      width: 100%;
+      padding: 0;
+   }
+
+   .cards-list2 {
+      margin-top: 3%;
+      width: 100%;
+      padding: 0;
+   }
+
+   .footer-links {
+      width: 40%;
+   }
+
+   .footer-links > .col-1{
+      width: 40%;
+   }
+
+   .footer-content > .col-2 {
+      width: 20%;
+      margin-top: 5%;
+   }
+
+   .footer-content > .col-2 > ul > li {
+      display: flex;
+      margin-left: 0px;
+   }
+   
+   .title {
+      margin-top: 50px;
+      margin-bottom: 0px;
+   }
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1360px) {
+
+   .header-img {
+      height: 120vh;
+   }
+
+   .header-search {
+      margin-top: 0px;
+      width: 60%;
+      height: 100px;
+      position: absolute;
+      top: 80vh;
+      left: 0;
+      right: 0;
+   }
+
+   
+}
+
+@media only screen and (max-width: 1500px) and (min-width: 1400px) {
+
+   .header-search {
+      margin-top: 0px;
+      width: 60%;
+      height: 100px;
+      position: absolute;
+      top: 70vh;
+      left: 0;
+      right: 0;
+   }
+
+   
+}
