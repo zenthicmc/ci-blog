@@ -12,7 +12,7 @@ A reponsive blog web application where people can create &amp; host their articl
 </ul>
 
 # Installation
-- Configure `.env` with your database, appname, baseurl details<br>
+- Configure `.env` with your database, appname & baseurl details<br>
 - Migrate all tables<br>
 `php spark migrate`<br>
 - Seed all dummy datas to the tables<br>
