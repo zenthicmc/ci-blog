@@ -17,6 +17,8 @@ A reponsive blog web application where people can create &amp; host their articl
 `php spark migrate`<br>
 - Seed all dummy datas to the tables<br>
 `php spark db:seed dataSeeder`
+- Start the server<br>
+`php spark serve`
 
 # Pictures
 <img src="https://i.imgur.com/8KTmyI0.png" style="height:500px;">
