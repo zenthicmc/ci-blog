@@ -20,6 +20,6 @@ A reponsive web application blog where users can create &amp; host their article
 - Start the server<br>
 `php spark serve`
 
-# Pictures
+# Screenshots
 <img src="https://i.imgur.com/8KTmyI0.png" style="height:500px;">
 <img src="https://i.imgur.com/7hw4zoE.png" style="height:500px;">
