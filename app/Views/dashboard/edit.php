@@ -21,12 +21,16 @@
                      <div class="invalid-feedback">
                         <?= $validation->getError('title') ?>
                      </div>
+                     <div class="form-text">Minimum: 10 Characters</div>
                   </div>
                   <div class="mb-3">
                         <label for="category" class="form-label">Category</label>
                         <select class="form-select" name="category">
                            <?php foreach($categories as $category): ?>
+                              <!-- make default value of option to current category -->
                               <?php if(old('category') == $category['name']) : ?>
+                                 <option value="<?= $category['name'] ?>" selected><?= ucfirst($category['name']); ?></option>
+                              <?php elseif($article['category'] == $category['name']) : ?>
                                  <option value="<?= $category['name'] ?>" selected><?= ucfirst($category['name']); ?></option>
                               <?php else: ?>
                                  <option value="<?= $category['name'] ?>"><?= ucfirst($category['name']); ?></option>
@@ -36,17 +40,19 @@
                   </div>
                   <div class="mb-4">
                      <label for="category" class="form-label">Cover Image</label>
-                     <div class="input-group mb-3">
+                     <div class="input-group">
                         <input class="form-control <?= ($validation->hasError('cover')) ? 'is-invalid': '';  ?>" type="file" id="cover" name="cover" value="<?= (old('cover')) ? old('cover') : $article['cover']; ?>">
                         <div class="invalid-feedback">
                            <?= $validation->getError('cover') ?>
                         </div>
                      </div>
+                     <div class="form-text mb-3">Recommended size: 400x600px</div>
                   </div>
                   <div class="mb-3">
                      <input name="body" id="body" type="hidden" value="<?= (old('body')) ? old('body') : $article['content']; ?>">
                      <trix-editor input="body"></trix-editor>
                      <p class="text-danger"><?= $validation->getError('body') ?></p>
+                     <div class="form-text">Minimum: 100 Characters</div>
                   </div>
                   <button type="submit" class="btn btn-primary">Save</button>
                </form>

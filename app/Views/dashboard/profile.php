@@ -22,6 +22,9 @@
                 </form>
                 </div>
             </div>
+        <div class="col-lg-12">
+            <a href="/user/<?= $user['username'] ?>" class="btn text-white w-100" style="background: #7e56da;border-style: none;">See my profile page</a>
+        </div>
         </div>
         <div class="col-lg-8">
             <?php if(session()->getFlashdata('msg')) : ?>
@@ -49,7 +52,7 @@
                                     <div class="col">
                                         <div class="mb-3">
                                             <label class="form-label" for="username"><strong>Username</strong></label>
-                                            <input class="form-control <?= ($validation->hasError('username')) ? 'is-invalid': '';  ?>" type="text" id="username" value="<?= $user['username'] ?>" name="username" required>
+                                            <input class="form-control <?= ($validation->hasError('username')) ? 'is-invalid': '';  ?>" type="text" id="username" value="<?= $user['username'] ?>" name="username" readonly>
                                             <div class="invalid-feedback">
                                                 <?= $validation->getError('username') ?>
                                             </div>

@@ -56,7 +56,7 @@
                     <tbody>
                         <?php foreach($articles as $article) : ?>
                         <tr>
-                            <td><img class="rounded-circle me-2" width="30" height="30" src="/img/article-images/<?= $article['cover'] ?>"><?= substr($article['title'], 0, 30) . '...'; ?></td>
+                            <td><img class="rounded-circle me-2" width="30" height="30" src="/img/article-images/<?= $article['cover'] ?>"><?= strip_tags(substr($article['title'], 0, 30) . '...'); ?></td>
                             <td><?= ucfirst($article['category']) ?></td>
                             <td><?= ucfirst($article['author']) ?></td>
                             <td><?= $article['cover'] ?></td>

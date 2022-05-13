@@ -31,26 +31,21 @@
          <?php if(!empty($articles)): ?>
             <?php foreach ($articles as $article): ?>
             <div class="col mt-5">
-               <div class="card2" onclick="location.href='<?= base_url(); ?>/view/<?= $article['slug'] ?>';">
-                  <img src="/img/article-images/<?= $article['cover'] ?>" alt="<?= $article['cover'] ?>" class="card-img-top">
+               <div class="card2" onclick="location.href='<?= base_url(); ?>/view/<?= $article->slug ?>';">
+                  <img src="/img/article-images/<?= $article->cover ?>" alt="<?= $article->cover ?>" class="card-img-top" style="height: 250px;">
                   <div class="card-body">
                      <div class="desc d-flex">
-                        <p class="<?= $article['class'] ?> text-light"><?= strtoupper($article['category']); ?></p>
+                        <p class="<?= $article->class ?> text-light"><?= strtoupper($article->category); ?></p>
                         <span class="card-dot t-secondary">&#9679;</span>
-                        <p class="card-time t-black"><?= $this->articleModel->time_elapsed_string($article['updated_at']) ?></p>
+                        <p class="card-time t-black"><?= $this->articleModel->time_elapsed_string($article->updated_at) ?></p>
                      </div>
-                     <h3 class="t-black"><?= substr($article['title'], 0, 49) . '...'; ?></h3>
-                     <p class="card-text t-secondary"><?= htmlspecialchars(substr($article['content'], 5, 100)) . '...'; ?></p>
-                     <p class="t-black">Posted by <a href="#" class="text-decoration-none t-black"><?= $article['author'] ?></a></p>
+                     <h3 class="t-black"><?= strip_tags(substr($article->title, 0, 49) . '...'); ?></h3>
+                     <p class="card-text t-secondary"><?= strip_tags(substr($article->content, 0, 95)) . '...'; ?></p>
+                     <p class="t-black">Posted by <a href="/user/<?= $article->author ?>" class="text-decoration-none t-black"><?= $article->author ?></a></p>
                   </div>
                </div>
             </div>
             <?php endforeach; ?>
-            <div class="col-lg-12 mt-5">
-               <div class="d-flex justify-content-center">
-                  <?= $pager->links('article', 'bootstrap_5_full'); ?>
-               </div>
-            </div>
          <?php else: ?>
             <div class="container" style="min-height: 100vh;">
                <div class="col-lg-12">

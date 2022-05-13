@@ -8,5 +8,10 @@ class UserModel extends Model
    protected $primaryKey = 'id';
    protected $allowedFields = ['username', 'email', 'password', 'firstname', 'lastname', 'role', 'image', 'created_at', 'updated_at'];
    protected $useTimestamps = true;
+
+   public function getUsernameById($id)
+   {
+      return $this->where('id', $id)->first()['username'];
+   }
 }
 ?>

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light b2-primary navbar-expand-lg p-3" id="mainNav">
    <div class="container">
-      <a class="navbar-brand brand text-light" href="/"><h4>MY BLOG</h4></a>
+      <a class="navbar-brand brand text-light" href="/"><h4><?= env('APP_NAME') ?></h4></a>
       <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler border-0 text-white navbar-toggler-right text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
 
       <div class="collapse navbar-collapse" id="navbarResponsive">

@@ -35,17 +35,21 @@ $routes->get('/', 'Pages::index');
 $routes->get('/search', 'Pages::search');
 $routes->get('/view/(:any)', 'Pages::view/$1');
 $routes->post('/contact/save', 'Pages::contactSave');
+$routes->get('/user/(:any)', 'Follower::index/$1');
 
 // auth routes
 $routes->get('/auth/login', 'Auth::login');
 $routes->post('/auth/login/check', 'Auth::loginCheck');
-
+// register routes
 $routes->get('/auth/register', 'Auth::register');
 $routes->post('/auth/register/check', 'Auth::registerCheck');
 
 
 $routes->group('',['filter'=>'AuthFilter'], function($routes)
 {
+    $routes->post('/followsave/(:num)', 'Follower::follow/$1');
+    $routes->post('/like/(:num)', 'Like::save/$1');
+
     // dashboard routes
     $routes->get('/dash', 'Dashboard::index');
     $routes->get('/dash/logout', 'Auth::logout');

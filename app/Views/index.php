@@ -33,7 +33,7 @@
          <div class="card card1" data-aos="flip-left" data-aos-duration="900" onclick="location.href='<?= base_url(); ?>/view/<?= $articles->slug ?>';">
             <div class="row g-0">
             <div class="col-md-4">
-               <img src="/img/article-images/<?= $articles->cover ?>" alt="<?= $articles->cover ?>">
+               <img src="/img/article-images/<?= $articles->cover ?>" alt="<?= $articles->cover ?>" style="height: 250px;">
             </div>
             <div class="col-md-7">
                <div class="card-body">
@@ -42,9 +42,9 @@
                      <span class="card-dot t-secondary">&#9679;</span>
                      <p class="card-time t-black"><?= $this->articleModel->time_elapsed_string($articles->updated_at) ?></p>
                   </div>
-                  <h3 class="t-black"><?= substr($articles->title, 0, 49) . '...'; ?></h3>
-                  <p class="card-text t-secondary"><?= htmlspecialchars(substr($articles->content, 5, 95)) . '...'; ?></p>
-                  <p class="t-black">Posted by <a href="#" class="text-decoration-none" style="color: #555555;"><?= $articles->author; ?></a></p>
+                  <h3 class="t-black"><?= strip_tags(substr($articles->title, 0, 49) . '...'); ?></h3>
+                  <p class="card-text t-secondary"><?= strip_tags(substr($articles->content, 0, 95)) . '...'; ?></p>
+                  <p class="t-black">Posted by <a href="/user/<?= $articles->author ?>" class="text-decoration-none t-black"><?= $articles->author; ?></a></p>
                </div>
             </div>
             </div>
@@ -56,16 +56,16 @@
       <div class="cards cards-list2">
          <?php foreach ($three_articles as $articles): ?>
          <div class="card card2" data-aos="flip-left" data-aos-duration="900" onclick="location.href='<?= base_url(); ?>/view/<?= $articles->slug ?>';">
-            <img src="/img/article-images/<?= $articles->cover ?>" alt="<?= $articles->cover ?>" class="card-img-top">
+            <img src="/img/article-images/<?= $articles->cover ?>" alt="<?= $articles->cover ?>" class="card-img-top" style="height: 250px;">
             <div class="card-body">
                <div class="desc d-flex">
                   <p class="text-white <?= $articles->class ?>"><?= strtoupper($articles->category); ?></p>
                   <span class="card-dot t-secondary">&#9679;</span>
                   <p class="card-time t-black"><?= $this->articleModel->time_elapsed_string($articles->updated_at) ?></p>
                </div>
-               <h3 class="t-black"><?= substr($articles->title, 0, 49) . '...'; ?></h3>
-               <p class="card-text t-secondary"><?= htmlspecialchars(substr($articles->content, 5, 95)) . '...'; ?></p>
-               <p class="t-black">Posted by <a href="#" class="text-decoration-none" style="color: #555555;"><?= $articles->author ?></a></p>
+               <h3 class="t-black"><?= strip_tags(substr($articles->title, 0, 49) . '...'); ?></h3>
+               <p class="card-text t-secondary"><?= strip_tags(substr($articles->content, 5, 95)) . '...'; ?></p>
+               <p class="t-black">Posted by <a href="/user/<?= $articles->author ?>" class="text-decoration-none t-black"><?= $articles->author ?></a></p>
             </div>
          </div>
          <?php endforeach; ?>

@@ -19,6 +19,7 @@
                         <div class="invalid-feedback">
                            <?= $validation->getError('title') ?>
                         </div>
+                        <div class="form-text">Minimum: 10 Characters</div>
                      </div>
                      <div class="mb-3">
                            <label for="category" class="form-label">Category</label>
@@ -34,16 +35,18 @@
                      </div>
                      <div class="mb-4">
                         <label for="category" class="form-label">Cover Image</label>
-                        <div class="input-group mb-3">
-                           <input class="form-control <?= ($validation->hasError('cover')) ? 'is-invalid': '';  ?>" type="file" id="cover" name="cover" value="<?= old('cover') ?>" required>
+                        <div class="input-group">
+                           <input class="form-control <?= ($validation->hasError('cover')) ? 'is-invalid': '';  ?>" type="file" id="cover" name="cover" value="<?= old('cover') ?>" aria-describedby="coverHelp" required>
                            <div class="invalid-feedback">
                               <?= $validation->getError('cover') ?>
                            </div>
                         </div>
+                        <div class="form-text mb-3">Recommended size: 400x600px</div>
                      </div>
                      <div class="mb-3">
                         <input id="body" type="hidden" name="body" value="<?= old('body') ?>">
                         <trix-editor input="body"></trix-editor>
+                        <div class="form-text">Minimum: 100 Characters</div>
                         <p class="text-danger"><?= $validation->getError('body') ?></p>
                      </div>
                      <button type="submit" class="btn btn-primary">Create</button>

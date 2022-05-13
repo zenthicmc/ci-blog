@@ -68,8 +68,11 @@
                            <label for="role" class="form-label">Role</label>
                            <select class="form-select" name="role" value="<?= (old('role')) ? old('role') : $user['role']; ?>">
                               <?php foreach($roles as $role): ?>
-                                 <?php if(old('role') == $user['role']) : ?>
-                                    <option value="<?= $user['role'] ?>" selected><?= ucfirst($user['role']); ?></option>
+                                 <!-- make default value of option to current role -->
+                                 <?php if(old('role') == $role['name']) : ?>
+                                    <option value="<?= $role['name'] ?>" selected><?= ucfirst($role['name']); ?></option>
+                                 <?php elseif($user['role'] == $role['name']) : ?>
+                                    <option value="<?= $role['name'] ?>" selected><?= ucfirst($role['name']); ?></option>
                                  <?php else: ?>
                                     <option value="<?= $role['name'] ?>"><?= ucfirst($role['name']); ?></option>
                                  <?php endif; ?>

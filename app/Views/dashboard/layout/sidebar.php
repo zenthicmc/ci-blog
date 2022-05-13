@@ -2,7 +2,7 @@
 <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background: #7e56da;">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dash">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fa-solid fa-scroll"></i>
     </div>
@@ -17,12 +17,6 @@
     <a class="nav-link <?php if($title=="Dashboard") {echo "active";}  ?>" href="/dash">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
-</li>
-
-<li class="nav-item">
-    <a class="nav-link" href="/">
-        <i class="fa-solid fa-house"></i>
-        <span>Back To Home</span></a>
 </li>
 
 <!-- Divider -->

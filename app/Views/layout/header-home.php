@@ -1,7 +1,7 @@
 <div class="header-img">
    <nav class="navbar navbar-light navbar-expand-lg p-3" id="mainNav">
       <div class="container">
-         <a class="navbar-brand brand text-light" href="/"><h4>MY BLOG</h4></a>
+         <a class="navbar-brand brand text-light" href="/"><h4><?= env('APP_NAME') ?></h4></a>
          <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler border-0 text-white navbar-toggler-right text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
 
          <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -39,7 +39,7 @@
          <div class="col-4">
             <h1 class="text-white fw-bold header-text" id="banner-title">Create your article now!</h1>
             <p class="text-white header-text-secondary mt-3" id="banner-desc">Start earning readers at anytime</p>
-            <a class="btn btn-light bg-light button mt-3" id="banner-button" style="color: #7E56DA;" href="">Start Now</a>
+            <a class="btn btn-light bg-light button mt-3" id="banner-button" style="color: #7E56DA;" href="/dash">Start Now</a>
          </div>
          <div class="col-3 investment">
             <img src="/img/invesment.png" class="img-invesment animate__animated animate__fadeInRight">

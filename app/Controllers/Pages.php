@@ -1,18 +1,24 @@
 <?php
 
 namespace App\Controllers;
-use \App\Models\ArticleModel;
-use \App\Models\ContactModel;
+use App\Models\ArticleModel;
+use App\Models\UserModel;
+use App\Models\ContactModel;
+use App\Models\LikeModel;
 
 class Pages extends BaseController
 {
    protected $articleModel;
    protected $contactModel;
+   protected $likeModel;
+   protected $userModel;
 
    public function __construct()
    {
       $this->articleModel = new ArticleModel();
       $this->contactModel = new ContactModel();
+      $this->userModel = new UserModel();
+      $this->likeModel = new LikeModel();
    }
 
    public function index()
@@ -40,7 +46,7 @@ class Pages extends BaseController
       else {
          $data = [
             'appName' => getenv('APP_NAME'),
-            'articles' => $this->articleModel->join('category', 'category.name = article.category')->paginate(6, 'article'),
+            'articles' => $this->articleModel->getAllArticle(),
             'pager' => $this->articleModel->pager,
             'keyword' => $this->request->getVar('keyword')
          ];
@@ -51,9 +57,20 @@ class Pages extends BaseController
 
    public function view($slug)
    {
+      $article = $this->articleModel->where('slug', $slug)->first();
+      // check if user is logged in
+      if(session()->has('id')) {
+         $data_like = $this->likeModel->checkIsLiked(session()->get('id'), $article['id']);
+      }
+      else {
+         $data_like = 'Not logged in';
+      }
+
       $data = [
          'appName' => getenv('APP_NAME'),
-         'articles' => $this->articleModel->getArticleBySlug($slug)
+         'articles' => $this->articleModel->getArticleBySlug($slug),
+         'data_like' => $data_like,
+         'count_likes' => count($this->likeModel->where('id_article', $article['id'])->findAll()),
       ];
 
       return view('view', $data);
@@ -80,5 +97,16 @@ class Pages extends BaseController
       $this->contactModel->save($data);
       session()->setFlashdata('msg', 'Your message has been sent');
       return redirect()->to('/#contact');
+   }
+
+   public function user($username) {
+      $data = [
+         'appName' => getenv('APP_NAME'),
+         'user' => $this->userModel->where('username', $username)->first(),
+         'count_articles' => count($this->articleModel->getArticleByUser($username)),
+         'articles' => $this->articleModel->getRecentArticleByUsername($username, 3)
+      ];
+
+      return view('user', $data);
    }
 }

@@ -2,7 +2,7 @@
    <div class="container">
       <div class="footer-content">
          <div class="col-3">
-            <h3 class="text-light fw-bold">MY BLOG</h3>
+            <h3 class="text-light fw-bold"><?= env('APP_NAME') ?></h3>
             <p class="text-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
          </div>
          <div class="footer-links">

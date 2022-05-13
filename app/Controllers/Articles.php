@@ -43,10 +43,10 @@ class Articles extends BaseController
    {
       // validasi input
       if(!$this->validate([
-         'title' => 'required|is_unique[article.title]',
+         'title' => 'required|is_unique[article.title]|min_length[10]',
          'category' => 'required',
          'cover' => 'mime_in[cover,image/jpg,image/jpeg,image/png]|max_size[cover,10240]',
-         'body' => 'required',
+         'body' => 'required|min_length[100]',
       ])) {
          return redirect()->to('/dash/articles/new')->withInput();
       }
@@ -90,10 +90,10 @@ class Articles extends BaseController
       // cek judul
       $articleModel = $this->articleModel->getArticleById($id);
       if($articleModel['title'] == $this->request->getVar('title')) {
-         $rule_judul = 'required';
+         $rule_judul = 'required|min_length[10]';
       }
       else {
-         $rule_judul = 'required|is_unique[article.title]';
+         $rule_judul = 'required|is_unique[article.title]|min_length[10]';
       }
 
       // validasi input
@@ -101,7 +101,7 @@ class Articles extends BaseController
          'title' => $rule_judul,
          'category' => 'required',
          'cover' => 'mime_in[cover,image/jpg,image/jpeg,image/png]|max_size[cover,10240]',
-         'body' => 'required',
+         'body' => 'required|min_length[100]',
       ])) {
          session()->setFlashdata('error', 'Error occured while updating article, please check your input again');
          return redirect()->to('/dash/articles');

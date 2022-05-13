@@ -40,13 +40,13 @@ $this->articleModel = new ArticleModel();
                 <div class="card mb-3" style="max-width: 100%;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="/img/article-images/<?= $article->cover ?>" style="height: 100%;" class="img-fluid rounded-start" alt="<?= $article->cover ?>">
+                            <img src="/img/article-images/<?= $article->cover ?>" style="height: 200px;width: 300px;" class="img-fluid rounded-start" alt="<?= $article->cover ?>">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title t-black"><?= substr($article->title, 0, 49) . '...'; ?></h5>
+                                <h5 class="card-title t-black"><?= strip_tags(substr($article->title, 0, 49) . '...'); ?></h5>
                                 <div class="col-lg-12 mb-2">
-                                    <p class="card-text t-black"><?= htmlspecialchars(substr($article->title, 5, 90)) . '...'; ?></p>
+                                    <p class="card-text t-black"><?= strip_tags(substr($article->content, 5, 90)) . '...'; ?></p>
                                 </div>
                                 <div class="col-lg-12 d-flex vertical-middle">
                                     <div class="col-3 text-white vertical-middle">
@@ -72,13 +72,9 @@ $this->articleModel = new ArticleModel();
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
-                                    <button class="btn btn-success text-white btn-circle" onclick="copyLink()">
-                                        <i class="fa-solid fa-copy"></i>
-                                    </button>
-                                    <form>
-                                    <?= csrf_field() ?>
-                                        <input type="text" name="link" value="<?= base_url(); ?>/view/<?= $article->id ?>" id="link" style="visibility: hidden;position: absolute;">
-                                    </form>
+                                    <a href="/view/<?= $article->slug ?>" class="btn btn-success text-white btn-circle" onclick="copyLink()">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
