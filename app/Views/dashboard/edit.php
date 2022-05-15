@@ -46,13 +46,13 @@
                            <?= $validation->getError('cover') ?>
                         </div>
                      </div>
-                     <div class="form-text mb-3">Recommended size: 400x600px</div>
+                     <div class="form-text mb-3">Recommended size: 400x600px | <bold class="text-danger">Accepted Image: .jpg .png</bold></div>
                   </div>
                   <div class="mb-3">
                      <input name="body" id="body" type="hidden" value="<?= (old('body')) ? old('body') : $article['content']; ?>">
-                     <trix-editor input="body"></trix-editor>
+                     <div id="editor" style="min-height: 100px;"><?= $article['content']; ?></div>
                      <p class="text-danger"><?= $validation->getError('body') ?></p>
-                     <div class="form-text">Minimum: 100 Characters</div>
+                     <div class="form-text">Minimum: 100 Characters | <bold class="text-danger">Accepted Image: .png</bold></div>
                   </div>
                   <button type="submit" class="btn btn-primary">Save</button>
                </form>
@@ -61,6 +61,25 @@
      </div>
   </div>
 </div>
+<script>
+   var quill = new Quill('#editor', {
+      theme: 'snow',
+      modules: {
+         toolbar: [
+               [{ header: [1, 2, 3, 4, 5, 6, false] }],
+               [{ font: [] }],
+               ["bold", "italic"],
+               ["link", "blockquote", "code-block", "image"],
+               [{ list: "ordered" }, { list: "bullet" }],
+               [{ script: "sub" }, { script: "super" }],
+               [{ color: [] }, { background: [] }],
+         ]
+   },
+   });
+   quill.on('text-change', function(delta, oldDelta, source) {
+      document.querySelector("input[name='body']").value = quill.root.innerHTML;
+   });
+</script>
 <?= $this->endSection() ?>
 
 

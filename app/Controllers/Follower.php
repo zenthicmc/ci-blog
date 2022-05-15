@@ -22,6 +22,9 @@ class Follower extends BaseController
    public function index($username)
    {
       $user = $this->userModel->where('username', $username)->first();
+      if(!$user) {
+         throw new \CodeIgniter\Exceptions\PageNotFoundException('User not found');
+      }
       // check if user is logged in
       if(session()->has('id')) {
          $data_following = $this->followerModel->checkIsFollowing(session()->get('id'), $user['id']);

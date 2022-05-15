@@ -22,16 +22,19 @@
                         </div>
                      </div>
                      <div class="mb-3">
-                           <label for="category" class="form-label">Category</label>
-                           <select class="form-select" name="category" value="<?= old('category') ?>">
-                              <?php foreach($categories as $category): ?>
-                                 <?php if(old('category') == $category['name']) : ?>
-                                    <option value="<?= $category['name'] ?>" selected><?= ucfirst($category['name']); ?></option>
-                                 <?php else: ?>
-                                    <option value="<?= $category['name'] ?>"><?= ucfirst($category['name']); ?></option>
-                                 <?php endif; ?>
-                              <?php endforeach; ?>
-                           </select>
+                        <label for="category" class="form-label">Category</label>
+                        <select class="form-select" name="category">
+                           <?php foreach($categories as $category): ?>
+                              <!-- make default value of option to current category -->
+                              <?php if(old('category') == $category['name']) : ?>
+                                 <option value="<?= $category['name'] ?>" selected><?= ucfirst($category['name']); ?></option>
+                              <?php elseif($article['category'] == $category['name']) : ?>
+                                 <option value="<?= $category['name'] ?>" selected><?= ucfirst($category['name']); ?></option>
+                              <?php else: ?>
+                                 <option value="<?= $category['name'] ?>"><?= ucfirst($category['name']); ?></option>
+                              <?php endif; ?>
+                           <?php endforeach; ?>
+                        </select>
                      </div>
                      <div class="mb-3">
                            <label for="author" class="form-label">Author</label>
@@ -55,9 +58,10 @@
                         </div>
                      </div>
                      <div class="mb-3">
-                        <input id="body" type="hidden" name="body" value="<?= (old('body')) ? old('body') : $article['content']; ?>">
-                        <trix-editor input="body"></trix-editor>
+                        <input name="body" id="body" type="hidden" value="<?= (old('body')) ? old('body') : $article['content']; ?>">
+                        <div id="editor" style="min-height: 100px;"><?= $article['content']; ?></div>
                         <p class="text-danger"><?= $validation->getError('body') ?></p>
+                        <div class="form-text">Minimum: 100 Characters | <bold class="text-danger">Accepted Image: .png</bold></div>
                      </div>
                      <button type="submit" class="btn btn-primary">Edit Article</button>
                   </form>
@@ -66,4 +70,23 @@
         </div>
      </div>
 </div>
+<script>
+   var quill = new Quill('#editor', {
+      theme: 'snow',
+      modules: {
+         toolbar: [
+               [{ header: [1, 2, 3, 4, 5, 6, false] }],
+               [{ font: [] }],
+               ["bold", "italic"],
+               ["link", "blockquote", "code-block", "image"],
+               [{ list: "ordered" }, { list: "bullet" }],
+               [{ script: "sub" }, { script: "super" }],
+               [{ color: [] }, { background: [] }],
+         ]
+   },
+   });
+   quill.on('text-change', function(delta, oldDelta, source) {
+      document.querySelector("input[name='body']").value = quill.root.innerHTML;
+   });
+</script>
 <?= $this->endSection() ?>

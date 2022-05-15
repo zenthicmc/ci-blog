@@ -58,6 +58,10 @@ class Pages extends BaseController
    public function view($slug)
    {
       $article = $this->articleModel->where('slug', $slug)->first();
+      if(!$article) {
+         throw new \CodeIgniter\Exceptions\PageNotFoundException;
+      }
+
       // check if user is logged in
       if(session()->has('id')) {
          $data_like = $this->likeModel->checkIsLiked(session()->get('id'), $article['id']);

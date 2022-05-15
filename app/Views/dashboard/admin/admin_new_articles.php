@@ -54,8 +54,9 @@
                         </div>
                      </div>
                      <div class="mb-3">
-                        <input id="body" type="hidden" name="body" value="<?= old('body') ?>">
-                        <trix-editor input="body"></trix-editor>
+                        <input type="hidden" name="body" value="<?= old('body') ?>">
+                        <div id="editor" style="min-height: 100px;"></div>
+                        <div class="form-text">Minimum: 100 Characters | <bold class="text-danger">Accepted Image: .png</bold></div>
                         <p class="text-danger"><?= $validation->getError('body') ?></p>
                      </div>
                      <button type="submit" class="btn btn-primary">Add Article</button>
@@ -65,4 +66,23 @@
         </div>
      </div>
 </div>
+<script>
+   var quill = new Quill('#editor', {
+      theme: 'snow',
+      modules: {
+         toolbar: [
+               [{ header: [1, 2, 3, 4, 5, 6, false] }],
+               [{ font: [] }],
+               ["bold", "italic"],
+               ["link", "blockquote", "code-block", "image"],
+               [{ list: "ordered" }, { list: "bullet" }],
+               [{ script: "sub" }, { script: "super" }],
+               [{ color: [] }, { background: [] }],
+         ]
+   },
+   });
+   quill.on('text-change', function(delta, oldDelta, source) {
+      document.querySelector("input[name='body']").value = quill.root.innerHTML;
+   });
+</script>
 <?= $this->endSection() ?>

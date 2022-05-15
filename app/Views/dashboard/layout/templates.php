@@ -13,11 +13,8 @@
     <link rel="stylesheet" href="<?= base_url(); ?>/dashboard/bootstrap/css/style.css">
     <link rel="stylesheet" href="<?= base_url(); ?>/dashboard/bootstrap/css/trix.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        trix-toolbar [data-trix-button-group="file-tools"] {
-            display: none;
-        }
-    </style>
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -40,10 +37,5 @@
     <script src="<?= base_url(); ?>/dashboard/js/bs-init.js"></script>
     <script src="<?= base_url(); ?>/dashboard/js/theme.js"></script>
     <script src="<?= base_url(); ?>/js/liveProfile.js"></script>
-    <script>
-        document.addEventListener('trix-file-accept', function(e) {
-            e.preventDefault();
-        })
-    </script>
 </body>
 </html>
