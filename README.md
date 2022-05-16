@@ -7,7 +7,7 @@ A reponsive web application blog where users can create &amp; host their article
   <li>CodeIgniter 4</li>
   <li>GSAP</li>
   <li>AOS</li>
-  <li>TrixEditor</li>
+  <li>QuillJS</li>
   <li>SweetAlert</li>
 </ul>
 
